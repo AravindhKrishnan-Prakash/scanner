@@ -1,0 +1,42 @@
+{
+  "market_index_query": "NIFTY 50",
+  "watchlist": [
+    { "query": "RELIANCE" },
+    { "query": "TCS" },
+    { "query": "HDFCBANK" },
+    { "query": "ICICIBANK" },
+    { "query": "INFY" },
+    { "query": "LT" },
+    { "query": "SBIN" },
+    { "query": "AXISBANK" },
+    { "query": "KOTAKBANK" },
+    { "query": "BHARTIARTL" },
+    { "query": "TITAN" },
+    { "query": "SUNPHARMA" },
+    { "query": "WIPRO" },
+    { "query": "MARUTI" },
+    { "query": "TATAMOTORS" },
+    { "query": "BAJFINANCE" },
+    { "query": "ASIANPAINT" },
+    { "query": "HCLTECH" },
+    { "query": "ULTRACEMCO" },
+    { "query": "ADANIPORTS" }
+  ],
+  "user_profile": {
+    "capital": 100000,
+    "risk_per_trade_pct": 1,
+    "risk_level": "low",
+    "use_leverage": true,
+    "leverage_multiplier": 5
+  },
+  "scanner": {
+    "poll_seconds": 15,
+    "history_days": 30,
+    "support_resistance_lookback": 20,
+    "minimum_adx": 12,
+    "minimum_volume_ratio": 1.0,
+    "trading_mode": "intraday",
+    "intraday_candle_interval": "30minute",
+    "intraday_exit_time": "15:15"
+  }
+}

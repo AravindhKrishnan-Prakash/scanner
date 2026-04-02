@@ -1,0 +1,32 @@
+{
+  "asset": "XYZ",
+  "market_data": {
+    "open": 502,
+    "high": 514,
+    "low": 487,
+    "close": 490,
+    "volume": 125000,
+    "average_volume": 200000,
+    "volatility": 5.1
+  },
+  "technical_signals": {
+    "rsi": 49,
+    "ema_trend": "bullish",
+    "macd": "bearish",
+    "support": 484,
+    "resistance": 505
+  },
+  "market_context": {
+    "index_trend": "neutral",
+    "sector_strength": "neutral",
+    "liquidity": "medium"
+  },
+  "sentiment": {
+    "news_sentiment": "neutral"
+  },
+  "user_profile": {
+    "capital": 100000,
+    "risk_per_trade_pct": 1,
+    "risk_level": "low"
+  }
+}

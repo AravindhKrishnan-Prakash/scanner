@@ -1,0 +1,32 @@
+{
+  "asset": "RELIANCE",
+  "market_data": {
+    "open": 2910,
+    "high": 2958,
+    "low": 2898,
+    "close": 2948,
+    "volume": 1450000,
+    "average_volume": 1100000,
+    "volatility": 1.8
+  },
+  "technical_signals": {
+    "rsi": 61,
+    "ema_trend": "bullish",
+    "macd": "bullish",
+    "support": 2922,
+    "resistance": 3040
+  },
+  "market_context": {
+    "index_trend": "bullish",
+    "sector_strength": "strong",
+    "liquidity": "high"
+  },
+  "sentiment": {
+    "news_sentiment": "positive"
+  },
+  "user_profile": {
+    "capital": 100000,
+    "risk_per_trade_pct": 1,
+    "risk_level": "medium"
+  }
+}

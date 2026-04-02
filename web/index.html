@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signal Board</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">India Live Scanner</p>
+          <h1>Intraday signals with leverage support.</h1>
+          <p class="lede">
+            The system scans the market using intraday candles, filters weak setups, and surfaces only higher-quality
+            opportunities with clear risk control and leverage calculations.
+          </p>
+        </div>
+        <div class="hero-panel">
+          <div class="status-pill" id="mode-pill">Booting</div>
+          <div class="hero-stat">
+            <span>Provider</span>
+            <strong id="provider-name">Loading</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Trading Mode</span>
+            <strong id="trading-mode">Loading</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Index Trend</span>
+            <strong id="index-trend">Loading</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Qualified Trades</span>
+            <strong id="qualified-count">0</strong>
+          </div>
+          <button id="scan-now" class="scan-button">Scan Now</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Market View</p>
+            <h2>Opportunities</h2>
+          </div>
+          <div class="subtle" id="last-scan">Waiting for first scan</div>
+        </div>
+        <div id="opportunity-grid" class="opportunity-grid"></div>
+        <div id="empty-state" class="empty-state hidden">
+          No trade right now. The scanner is staying selective.
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Scanner Feed</p>
+            <h2>Watchlist</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>VWAP</th>
+                <th>Trend</th>
+                <th>ST</th>
+                <th>ADX</th>
+                <th>RSI</th>
+                <th>Vol Surge</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="watchlist-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel danger-panel hidden" id="error-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Attention</p>
+            <h2>Errors</h2>
+          </div>
+        </div>
+        <ul id="error-list" class="error-list"></ul>
+      </section>
+    </main>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
