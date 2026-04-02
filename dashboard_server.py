@@ -136,8 +136,11 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
 
 def main() -> int:
-    host = "127.0.0.1"
-    port = 8010
+    # For cloud hosting (Render, Railway, etc.), bind to 0.0.0.0 and use PORT env var
+    # For local development, use 127.0.0.1:8010
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", "8010"))
+    
     httpd = ThreadingHTTPServer((host, port), DashboardHandler)
     print(f"Live dashboard running at http://{host}:{port}")
     httpd.serve_forever()

@@ -48,8 +48,12 @@ class DecisionHandler(BaseHTTPRequestHandler):
 
 
 def main() -> int:
-    host = "127.0.0.1"
-    port = 8000
+    import os
+    # For cloud hosting (Render, Railway, etc.), bind to 0.0.0.0 and use PORT env var
+    # For local development, use 127.0.0.1:8000
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", "8000"))
+    
     httpd = ThreadingHTTPServer((host, port), DecisionHandler)
     print(f"Decision API running on http://{host}:{port}")
     httpd.serve_forever()
