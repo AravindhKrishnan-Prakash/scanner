@@ -20,11 +20,19 @@ class EmailNotifier:
     
     def send_trade_alert(self, opportunities: List[Dict[str, Any]]) -> None:
         """Send email alert for new trade opportunities"""
+        print(f"📧 Email notification triggered with {len(opportunities)} opportunities")
+        print(f"   EMAIL_NOTIFICATIONS_ENABLED: {self.enabled}")
+        print(f"   Sender email configured: {bool(self.sender_email)}")
+        print(f"   Recipient email configured: {bool(self.recipient_email)}")
+        
         if not self.enabled:
+            print("⚠ Email notifications are DISABLED")
             return
         
         if not self.sender_email or not self.recipient_email:
             print("⚠ Email notifications enabled but email addresses not configured")
+            print(f"   SENDER_EMAIL: {self.sender_email or 'NOT SET'}")
+            print(f"   RECIPIENT_EMAIL: {self.recipient_email or 'NOT SET'}")
             return
         
         # Filter out already-sent signals
@@ -36,16 +44,21 @@ class EmailNotifier:
                 self._sent_signals.add(signal_id)
         
         if not new_opportunities:
+            print(f"⚠ All {len(opportunities)} signals already sent before (duplicates filtered)")
             return
+        
+        print(f"✓ Sending email for {len(new_opportunities)} NEW signals...")
         
         try:
             subject = f"🚨 {len(new_opportunities)} New Trade Signal{'s' if len(new_opportunities) > 1 else ''}"
             body = self._format_email_body(new_opportunities)
             
             self._send_email(subject, body)
-            print(f"✓ Email sent: {len(new_opportunities)} signal(s)")
+            print(f"✓ Email sent successfully: {len(new_opportunities)} signal(s)")
         except Exception as e:
             print(f"✗ Failed to send email: {e}")
+            import traceback
+            traceback.print_exc()
     
     def _format_email_body(self, opportunities: List[Dict[str, Any]]) -> str:
         """Format opportunities into email body"""
